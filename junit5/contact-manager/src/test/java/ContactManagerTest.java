@@ -60,15 +60,6 @@ public class ContactManagerTest {
         });
     }
 
-    @Test
-    @DisplayName("Should Create Contact")
-    @EnabledOnOs(value = OS.MAC, disabledReason = "Should Run only on MAC")
-    public void shouldCreateContactOnMAC() {
-        contactManager.addContact("John", "Doe", "0123456789");
-        assertFalse(contactManager.getAllContacts().isEmpty());
-        assertEquals(1, contactManager.getAllContacts().size());
-    }
-
 
     @Test
     @DisplayName("Phone Number should start with 0")
