@@ -31,11 +31,11 @@ describe("Mock Functions", () => {
         expect(mockFn).toHaveBeenCalled();
         // La funcion mock ha sido llamada 4 veces
         expect(mockFn.mock.calls.length).toBe(4);
-        // El primer argumento de la primera llamada debe ser 3
+        // El primer argumento de la primera llamada debe ser fizz
         expect(mockFn.mock.calls[0][0]).toBe('fizz');
-        // El primer argumento de la segunda llamada debe ser 5
+        // El primer argumento de la segunda llamada debe ser buzz
         expect(mockFn.mock.calls[1][0]).toBe('buzz');
-        // Lo devuelve la primera llamada debe ser fizz
+        // Lo que devuelve la primera llamada debe ser fizz
         expect(mockFn.mock.results[0].value).toBe('fizz');
 
     });
@@ -48,10 +48,10 @@ describe("Spy Function", () => {
 
         const spy = jest.spyOn(function_examples, 'play_fizz_buzz');
 
-        const probe_1 = function_examples.play_fizz_buzz([1], mockFn);
+        const test_1 = function_examples.play_fizz_buzz([1], mockFn);
 
         expect(spy).toHaveBeenCalled(); // La funcion fizz_buzz fue llamada.
-        expect(probe_1).toBe("1"); // El resultado para la entrada 1 de fizz_buzz debe ser 1.
+        expect(test_1).toBe("1"); // El resultado para la entrada 1 de fizz_buzz debe ser 1.
 
         spy.mockRestore(); //Restaura el estado del mock creado por el spy.
 
